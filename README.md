@@ -7,4 +7,4 @@ DRFとchannelsの練習用にTwitterと2chを足して２で割ったような�
 MySQLの起動完了がDjangoより遅い為、一度コンテナに入ってrunserverする必要有り。
 
 
-![Sample Image](sample_image/スクリーンショット 2022-05-20 午後1.05.53.png)
+![Sample Image](/sample_images/スクリーンショット 2022-05-20 午後1.05.53.png)
