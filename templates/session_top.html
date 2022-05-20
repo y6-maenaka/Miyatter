@@ -1,0 +1,85 @@
+{% extends 'base_home.html' %}
+{% load static %}
+<!doctype html>
+<html lang='ja'>
+<head>
+  <meta charset='utf-8'>
+  {% block title %}<title>セッショントップ</title>{% endblock %}
+  {% block head %}
+  <link rel='stylesheet' type='text/css' href="{% static 'css/session_top.css' %}" />
+  <script type="text/javascript" src="{% static 'js/session_top.js' %}"></script>
+  {% endblock %}
+</head>
+
+
+<body>
+  {% block comment_post_form %}
+    <div id='post_comment_form' class='right_post_form_container'>
+      <textarea name="detail" placeholder="投稿内容" class='post_comment_textarea' rows='10' cols="22"></textarea>
+      <meter class='comment_words_counter'
+        min="0"
+        max="300"
+        high="250"
+        value="0"></meter>
+      <button class='post_comment_button'>POST</button>
+    </div>
+
+  {% endblock %}
+
+
+  {% block session_information %}
+  <div id='session_information_container'>
+    <p style='font-weight:bold;'>{{session_information.session_name}}</p>
+    <ul>
+      <li><p>タイプ</p>{% if session_information.session_type == "dynamic" %}
+          <p>固定セッション</p>
+          {% else %}
+          <p>動的セッション</p>
+          {% endif %}
+      </li>
+
+      <li><p>作成日</p>{{session_information.created_at|date:'Y年m月d日'}}</li>
+
+      <li><p>公開範囲</p{% if session_information.session_publication_range == "all" %}
+          <p>制限なし</p>
+          {% else %}
+          <p>ログインユーザのみ</p>
+          {% endif %}
+      </li>
+
+      {% csrf_token %}
+      <input type='hidden' value={{user.user_id}}>
+      <button class='session_registration_button'>登録</button>
+
+    </ul>
+  </div>
+  {% endblock %}
+
+
+  {% block header %}
+    <a href='{% url "session:session_top" session_information.session_id %}' id='session_header_name' class='header_name'>{{ session_information.session_name }}</a>
+    <ul id='session_menu'>
+      <li><a href='#' class='session_menu_file'>ファイル</a></li>
+      <li><a href='#' class='session_menu_top'>トップ</a></li>
+      <li><a href='#' class='session_menu_user'>ユーザ</a></li>
+    </ul>
+
+    <meter class='comment_words_counter'
+      min="0"
+      max="300"
+      high="250"
+      value="0"></meter>
+  {% endblock %}
+
+  {% block content %}
+  <div id='post_comment_form'>
+    <textarea name="detail" placeholder="投稿内容" class='post_comment_textarea'></textarea>
+    <button class='post_comment_button'>投稿</button>
+  </div>
+  <div id='comment_line_container'>
+  </div>
+
+
+  {% endblock %}
+</body>
+</html>

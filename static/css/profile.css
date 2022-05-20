@@ -1,0 +1,17 @@
+#home_header{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0 0 2px #AFAFAF;
+}
+
+#home_header a{
+  color: #444444;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Noto Sans JP', sans-serif;
+}

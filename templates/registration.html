@@ -1,0 +1,25 @@
+{% extends 'base_home.html' %}
+{% load static %}
+<!doctype html>
+<html lang='ja'>
+<head>
+  <meta charset='utf-8'>
+  {% block title %}<title>ユーザ登録</title>{% endblock %}
+  {% block head %}
+  <link rel='stylesheet' type='text/css' href="{% static 'css/registration.css' %}" />
+  <script type="text/javascript" src="{% static 'js/registration.js' %}"></script>
+  {% endblock %}
+</head>
+
+
+<body>
+  {% block content %}
+    <form action='{% url "accounts:registration" %}?user_type={{user_type}}' method="post">
+      {% csrf_token %}
+      {{ base_registration_form }}
+      {{ each_registration_form }}
+      <button>登録</button>
+    </form>
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base_home.html' %}
+{% load static %}
+<!doctype html>
+<html lang='ja'>
+<head>
+  <meta charset='utf-8'>
+  {% block title %}<title>プロフィール</title>{% endblock %}
+  {% block head %}
+  <link rel='stylesheet' type='text/css' href="{% static 'css/profile.css' %}" />
+  <script type="text/javascript" src="{% static 'js/profile.js' %}"></script>
+  {% endblock %}
+</head>
+
+
+<body>
+
+  {% block header %}
+    <a href='#' class='header_name'>PROFILE</a>
+  {% endblock %}
+
+  {% block content %}
+  
+  <p>Profile View</p>
+
+  {% endblock %}
+</body>
+</html>

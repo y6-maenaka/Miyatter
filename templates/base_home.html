@@ -1,0 +1,87 @@
+{% load static %}
+<!doctype html>
+<html lang='ja'>
+<head>
+  <meta charset="utf-8">
+  {% block title %}{% endblock %}
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel='stylesheet' type='text/css' href="{% static 'css/base.css' %}">
+  <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+  <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+  <!-- <link rel="icon" type="image/png" href="{% static 'image/siders_favicon.png' %}"> -->
+  {% block head %}
+  {% endblock %}
+</head>
+
+<body>
+
+  <div id='main_container'>
+
+    <div id='left_container' class='side_container'>
+      <div id='left_container_group'>
+        <ul id='global_menu'>
+          <li><a href='{% url "home:home" %}' class='global_menu_home'>Home</a></li>
+          <li><a href='#'>User</a></li>
+          <li><a href='{% url "session:session_home" %}' class='global_menu_session'>Session</a></li>
+          <li><a href='#'>List</a></li>
+          <li><a href='#'>Profile</a></li>
+          {% if user.is_anonymous %}
+          <li><a href='{% url "accounts:login" %}'>ログイン</a></li>
+          <li><a href='#'>新規作成</a></li>
+          {% else %}
+          <li><a href='{% url "accounts:profile" %}'>{{user.last_name}}{{user.first_name}}</a></li>
+          {% endif %}
+        </ul>
+
+        {% block comment_post_form %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <div id='center_container'>
+      <header id='base_header'>
+      {% block header %}
+      {% endblock %}
+      </header>
+
+      <div class='tmp'>
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <div id='right_container' class='side_container'>
+      <div id='right_container_group'>
+
+        {% block session_information %}
+        {% endblock %}
+
+        <div id='hit_tag_list_container'>
+        </div>
+
+
+        <a href='{% url "accounts:registration" %}?user_type=student'>学生アカウント新規作成</a>
+        <!-- <a href='{% url "accounts:registration" %}?user_type=teacher'>教員アカウント新規作成</a>
+        <a href='{% url "accounts:registration" %}?user_type=staff'>職員アカウント新規作成</a>
+
+        <a href='{% url "accounts:login" %}'>ログイン</a>
+        <a href='{% url "accounts:logout" %}'>ログアウト</a> -->
+
+        <div id='registration_session_container'>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- <footer>
+    <a href='#'>Miyatter</a>
+    <input placeholder="#検索ワード">
+  </footer> -->
+
+
+</body>
+
+</html>

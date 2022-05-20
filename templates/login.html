@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html lang='ja'>
+<head>
+  <meta charset='utf-8'>
+  {% block title %}<title>ログイン</title>{% endblock %}
+  {% block head %}
+  <link rel='stylesheet' type='text/css' href="{% static 'css/login.css' %}" />
+  <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+  {% endblock %}
+</head>
+
+
+<body>
+  <form action="{% url 'accounts:login' %}" method='post'>
+    {% csrf_token %}
+    {{ login_form }}
+    <button type='submit'>ログイン</button>
+  </form>
+
+</body>
+</html>

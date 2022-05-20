@@ -1,0 +1,62 @@
+#session_action_container{
+  width: 100%;
+}
+
+
+
+/* ======== セッション作成コンテナスタイル ======== */
+
+#select_create_session_type_container_bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.4);
+  z-index: 100;
+  display: none;
+}
+
+
+#select_create_session_type_container{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow:hidden;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+}
+
+#select_create_session_type_container li{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+}
+
+
+#select_create_session_type_container li a{
+  text-decoration: none;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  box-shadow: 0 0 2px gray;
+  transition: background 0.1s ease-in;
+}
+
+#select_create_session_type_container li a:hover{
+  background: #46D034;
+  color: #FFFFFF;
+  box-shadow: 0 0 4px #FFFFFF;
+}
+
+#select_create_session_type_container li p{
+  font-size: 0.825rem;
+  margin: 0 0.5rem;
+}
