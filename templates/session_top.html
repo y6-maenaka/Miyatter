@@ -40,7 +40,7 @@
 
       <li><p>作成日</p>{{session_information.created_at|date:'Y年m月d日'}}</li>
 
-      <li><p>公開範囲</p{% if session_information.session_publication_range == "all" %}
+			<li><p>公開範囲</p{% if session_information.session_publication_range == "all" %}>
           <p>制限なし</p>
           {% else %}
           <p>ログインユーザのみ</p>
@@ -49,7 +49,7 @@
 
       {% csrf_token %}
       <input type='hidden' value={{user.user_id}}>
-      <button class='session_registration_button'>登録</button>
+      <a class='session_registration_button'>登録</a>
 
     </ul>
   </div>
@@ -72,10 +72,10 @@
   {% endblock %}
 
   {% block content %}
-  <div id='post_comment_form'>
+  <!-- <div id='post_comment_form'>
     <textarea name="detail" placeholder="投稿内容" class='post_comment_textarea'></textarea>
     <button class='post_comment_button'>投稿</button>
-  </div>
+  </div> -->
   <div id='comment_line_container'>
   </div>
 

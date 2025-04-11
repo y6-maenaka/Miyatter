@@ -154,3 +154,10 @@ img{
   font-weight: bold;
   font-family: 'Noto Sans JP', sans-serif;
 }
+
+
+@media(max-width:910px){
+	.side_container{
+    width: 20% !important;
+  }
+}

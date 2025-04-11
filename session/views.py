@@ -75,3 +75,4 @@ class RegistrationSessionAPIViewSet(views.APIView):
         return Response('hello',status.HTTP_201_CREATED)
 
 registration_session = RegistrationSessionAPIViewSet.as_view()
+

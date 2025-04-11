@@ -16,7 +16,6 @@ class HomeView(View):
         context = {
         }
 
-
         return render(request,'home.html',context)
 
 home = HomeView.as_view()
