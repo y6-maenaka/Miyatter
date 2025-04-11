@@ -1,2 +1,17 @@
 .env
 /index_miyatter/.env
+
+*
+!*.*
+!*/
+.vscode/*
+
+.DS_Store
+*.sw?
+
+
+build/*
+./libs.txt
+log/*.log
+
+!Dockerfile

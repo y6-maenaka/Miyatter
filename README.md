@@ -12,6 +12,7 @@ Miyatterは、Django REST Framework（DRF）とDjango Channelsを利用して開
 
 <h2>アーキテクチャ図</h2>
 <img src="./sample_images/diagram.png" alt="Miyatter Architecture image">
+<p>powered by <a href="https://gitdiagram.com/">GitDiagram</a></p>
 
 <h2>採用技術</h2>
 <ul>
